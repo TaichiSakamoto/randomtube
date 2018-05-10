@@ -1,3 +1,7 @@
-<h1>Youtube#index</h1>
-<p>Find me in app/views/youtube/index.html.erb</p>
-<div id="sample"></div>
+<% flash.each do |key, value| %>
+  <%= content_tag(:div, value, class: "#{key}") %>
+<% end %>
+<%= form_tag youtube_search_path do %>
+  <%= text_field_tag :search_word, @search_word %>
+  <%= submit_tag "search" %>
+<% end %>

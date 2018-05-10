@@ -1,0 +1,18 @@
+<h1>ビデオ</h1>
+<table>
+  <% @videos.each do |video| %>
+    <tr><td><%= video..snippet.title %></td><td>ここにビデオにジャンプするとかのリンクを置いたりする</td></tr>
+  <% end %>
+</table>
+<h1>チャンネル</h1>
+<table>
+  <% @channels.each do |video| %>
+    <tr><td><%= video..snippet.title %></td><td>ここにチャンネルにジャンプするとかのリンクを置いたりする</td></tr>
+  <% end %>
+</table>
+<h1>プレイリスト</h1>
+<table>
+  <% @video.each do |video| %>
+    <tr><td><%= video..snippet.title %></td><td>ここにプレイリストにジャンプするとかのリンクを置いたりする</td></tr>
+  <% end %>
+</table>
