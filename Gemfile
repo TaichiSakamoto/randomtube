@@ -53,5 +53,5 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'google-api-client', '<0.9'
+gem 'google-api-client', require: 'google/api_client'
 gem 'trollop', '~> 2.1'
