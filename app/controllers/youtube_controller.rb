@@ -38,12 +38,14 @@ class YoutubeController < ActionController::Base
         :api_method => youtube.search.list,
         :parameters => {
           :part => 'snippet',
-          :q => opts[:q],
-          :maxResults => opts[:max_results]})
+          :q => @search_word,
+          :maxResults => opts[:max_results]
+          }
+        )
+
 
       @videos = []
       @channels = []
-      @playlists = []
 
       # Add each result to the appropriate list, and then display the lists of
       # matching videos, channels, and playlists.
@@ -53,8 +55,6 @@ class YoutubeController < ActionController::Base
           @videos << search_result
         when 'youtube#channel'
           @channels << search_result
-        when 'youtube#playlist'
-          @playlists << search_result
         end
       end
     rescue Google::APIClient::TransmissionError => e

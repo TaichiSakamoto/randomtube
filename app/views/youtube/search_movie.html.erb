@@ -1,18 +1,16 @@
 <h1>ビデオ</h1>
 <table>
   <% @videos.each do |video| %>
-    <tr><td><%= video.snippet.title %></td><td>ここにビデオにジャンプするとかのリンクを置いたりする</td></tr>
+    <tr><td>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= video.id.videoId %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </td></tr>
   <% end %>
 </table>
 <h1>チャンネル</h1>
 <table>
   <% @channels.each do |video| %>
-    <tr><td><%= video.snippet.title %></td><td>ここにチャンネルにジャンプするとかのリンクを置いたりする</td></tr>
-  <% end %>
-</table>
-<h1>プレイリスト</h1>
-<table>
-  <% @playlists.each do |video| %>
-    <tr><td><%= video.snippet.title %></td><td>ここにプレイリストにジャンプするとかのリンクを置いたりする</td></tr>
+  <tr><td>
+  <iframe width="560" height="315" src="https://www.youtube.com/channel/<%= video.snippet.channelId %>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </td></tr>
   <% end %>
 </table>
